@@ -50,8 +50,8 @@ Depending on the request and client support (Accept-Encoding header), Nginx will
 ### 1. Clone the repository
 
 ```bash
-git clone <your-repository-url>
-cd <your-repository-folder>
+git clone git@github.com:fiskolini/unity-nginx.git
+cd unity-nginx
 ```
 
 ### 2. Build and run with Docker
@@ -67,8 +67,8 @@ docker-compose up -d
 - Serve files from the web/ folder
 
 ### 3. Access your Unity WebGL build
-1. Open your browser and go to: http://localhost
-2. Navigate to /plain/, /gz/, or /br/ depending on what you want to test
+1. Open your browser and go to: http://localhost:443
+2. Navigate to `/gz/`, or `/br/` depending on what you want to test
 
 Example: `http://localhost/br`
 
