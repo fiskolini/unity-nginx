@@ -1,4 +1,4 @@
-![Unity](/unity-brand.png?raw=true "Unity")
+![Unity](/unity-brand.jpg?raw=true "Unity")
 
 # Unity WebGL Server
 
