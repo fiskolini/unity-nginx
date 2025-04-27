@@ -36,10 +36,10 @@ uncompressed files when necessary.
 
 The server handles three types of builds:
 
-| Folder | Description                                                                  |
-|:-------|:-----------------------------------------------------------------------------|
-| `/gz`  | Gzip-compressed version of the build. NOTE: Only accessible through port 443 |
-| `/br`  | Brotli-compressed version of the build (best performance)                    |
+| Folder | Description                                                                                       |
+|:-------|:--------------------------------------------------------------------------------------------------|
+| `/gz`  | Gzip-compressed version of the build.                                                             |
+| `/br`  | Brotli-compressed version of the build (best performance). NOTE: Only accessible through port 443 |
 
 Depending on the request and client support (Accept-Encoding header), Nginx will serve the correct version.
 
@@ -54,7 +54,12 @@ git clone git@github.com:fiskolini/unity-nginx.git
 cd unity-nginx
 ```
 
-### 2. Build and run with Docker
+### 2. Update the build artifacts
+
+Depending on your build, you should move the build files into the `web/br` or `web/gz`, depending on whether the build
+is compressed in brotli og gzip, respectively.
+
+### 3. Build and run with Docker
 
 ```bash
 docker-compose up -d
@@ -66,16 +71,18 @@ docker-compose up -d
 - Expose ports 80 (HTTP) and 443 (HTTPS)
 - Serve files from the web/ folder
 
-### 3. Access your Unity WebGL build
+### 4. Access your Unity WebGL build
+
 1. Open your browser and go to: http://localhost:443
 2. Navigate to `/gz/`, or `/br/` depending on what you want to test
 
 Example: `http://localhost/br`
 
 ## Credits
+
 - Francisco Carvalho @fiskolini
 - Kendir Studios [kendirstudios.pt 🇵🇹](kendirstudios.pt)
-- Unity Technologies for Unity WebGL 
+- Unity Technologies for Unity WebGL
 - Nginx for high-performance web serving
 - `fholzer/nginx-brotli` for the Nginx image with Brotli support
 
